@@ -14,6 +14,16 @@ void insertionSort(vector<int> &nums){
     }
 }
 
+void insertionSortF(vector<int> &nums){
+    for(int i=1;i<nums.size();i++){
+        int key=nums[i];
+        int j=i-1;
+        for(;j>=0 && nums[j]>key;j--){
+            nums[j+1]=nums[j];
+        }
+        nums[j+1]=key;
+    }
+}
 void display(vector<int> &nums){
     cout<<"\n\n\t\tThe element of the array are : ";
     for(auto it:nums){
@@ -24,6 +34,6 @@ void display(vector<int> &nums){
 int main(){
     vector<int> nums{4,5,6,2,1,3};
     display(nums);
-    insertionSort(nums);
+    insertionSortF(nums);
     display(nums);
 }
